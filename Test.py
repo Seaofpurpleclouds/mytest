@@ -70,9 +70,21 @@ print(fifo_three.bufer)
 
 
 #================================================================
+def quickSort(arr): # быстрая сортировка. До этого знал только сортировку пузырьком, выучил сортировку выборкой и быструю сортировку.
+    small = []
+    big = []
+    if len(arr) < 2:
+        return arr
+    else:
+        base = arr[0]
+        small = [i for i in arr[1:] if i <= base]
+        big = [i for i in arr[1:] if i > base]
+        return quickSort(small) + [base] + quickSort(big)
+
+#================================================================
 
 
-def bubleSort(nums): # Сортировка пузырьком. Выбрал потому что, на данный момент изучил только ее.
+def bubleSort(nums): # Сортировка пузырьком
     check = True
     while check:
         check = False
